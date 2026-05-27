@@ -20,5 +20,60 @@ class CNN1Conv(nn.Module):
             nn.ReLU(),
             nn.Linear(32, 2)
         )
+        
     def forward(self, x):
         return self.classifier(self.features(x))
+
+class LSTMModel(nn.Module):
+    def __init__(self, input_size):
+        super().__init__()
+        self.lstm = nn.LSTM(
+            input_size=input_size, 
+            hidden_size=200, 
+            num_layers=2, 
+            batch_first=True, 
+            dropout=DROPOUT, 
+            bidirectional=False
+        )
+        self.classifier = nn.Sequential(
+            nn.Linear(200, 200),
+            nn.ReLU(),
+            nn.Dropout(DROPOUT), 
+            nn.Linear(200, NUM_CLASSES)
+        )
+        
+    def forward(self, x):
+        output, (hidden, cell) = self.lstm(x)
+        last_hidden = hidden[-1]
+        return self.classifier(last_hidden)
+
+class DeepConvLSTM(nn.Module):
+    def __init__(self, num_features):
+        super().__init__()
+        self.conv_block = nn.Sequential(
+            nn.Conv1d(num_features, 64, kernel_size=5, padding=2),
+            nn.ReLU(),
+            nn.Conv1d(64, 64, kernel_size=5, padding=2),
+            nn.ReLU(),
+            nn.Conv1d(64, 64, kernel_size=5, padding=2),
+            nn.ReLU(),
+            nn.Conv1d(64, 64, kernel_size=5, padding=2),
+            nn.ReLU()
+        )
+        self.lstm = nn.LSTM(
+            input_size=64, 
+            hidden_size=128, 
+            num_layers=2, 
+            batch_first=True, 
+            dropout=DROPOUT 
+        )
+        self.dropout = nn.Dropout(DROPOUT)
+        self.classifier = nn.Linear(128, NUM_CLASSES)
+
+    def forward(self, x):
+        x = self.conv_block(x)
+        x = x.permute(0, 2, 1) 
+        lstm_out, _ = self.lstm(x)
+        ultimo_estado_oculto = lstm_out[:, -1, :]
+        ultimo_estado_oculto = self.dropout(ultimo_estado_oculto)
+        return self.classifier(ultimo_estado_oculto)

@@ -1,0 +1,130 @@
+{
+    "y_detect_fall": {
+        "0": [
+            "BACKWARD-FALL",
+            "FRONTAL-FALL",
+            "LATERAL-FALL-LEFT",
+            "LATERAL-FALL-RIGHT"
+        ]
+    },
+    "y_detect_movement": {
+        "0": [
+            "STANDING",
+            "STANDING-RIFLE",
+            "SITTING",
+            "SITTING-RIFLE",
+            "KNEELING-SHOOTING",
+            "PRONE-SHOOTING",
+            "DOWN-SUPINE",
+            "DOWN-PRONE",
+            "DOWN-LEFT",
+            "DOWN-RIGHT"
+        ]
+    },
+    "y_classify_fall": {
+        "0": [
+            "BACKWARD-FALL"
+        ],
+        "1": [
+            "FRONTAL-FALL"
+        ],
+        "2": [
+            "LATERAL-FALL-LEFT"
+        ],
+        "3": [
+            "LATERAL-FALL-RIGHT"
+        ]
+    },
+    "y_classify_posture": {
+        "0": [
+            "STANDING",
+            "STANDING-RIFLE"
+        ],
+        "1": [
+            "SITTING",
+            "SITTING-RIFLE"
+        ],
+        "2": [
+            "KNEELING-SHOOTING"
+        ],
+        "3": [
+            "PRONE-SHOOTING",
+            "DOWN-SUPINE",
+            "DOWN-PRONE",
+            "DOWN-LEFT",
+            "DOWN-RIGHT"
+        ]
+    },
+    "y_classify_movement": {
+        "0": [
+            "WALKING",
+            "WALKING-DOWNHILL",
+            "WALKING-DOWNSTAIRS",
+            "WALKING-UPHILL",
+            "WALKING-UPSTAIRS"
+        ],
+        "1": [
+            "ENGAGING-SWEEPING",
+            "WALKING-SWEEPING"
+        ],
+        "2": [
+            "RUNNING",
+            "RUNNING-DOWNHILL",
+            "RUNNING-DOWNHILL-RIFLE",
+            "RUNNING-RIFLE",
+            "RUNNING-UPHILL",
+            "RUNNING-UPHILL-RIFLE"
+        ],
+        "3": [
+            "JUMPING",
+            "JUMPING-RIFLE",
+            "JUMPING-UPSTAIRS"
+        ],
+        "4": [
+            "CRAWLING"
+        ]
+    },
+    "y_complete_map": {
+        "0": "BACKWARD-FALL",
+        "1": "CRAWLING",
+        "2": "DOWN-LEFT",
+        "3": "DOWN-PRONE",
+        "4": "DOWN-RIGHT",
+        "5": "DOWN-SUPINE",
+        "6": "ENGAGING-SWEEPING",
+        "7": "FRONTAL-FALL",
+        "8": "JUMPING",
+        "9": "JUMPING-RIFLE",
+        "10": "JUMPING-UPSTAIRS",
+        "11": "KNEELING-SHOOTING",
+        "12": "LATERAL-FALL-LEFT",
+        "13": "LATERAL-FALL-RIGHT",
+        "14": "PRONE-SHOOTING",
+        "15": "RUNNING",
+        "16": "RUNNING-DOWNHILL",
+        "17": "RUNNING-DOWNHILL-RIFLE",
+        "18": "RUNNING-KNEELING-SHOOTING",
+        "19": "RUNNING-PRONE-SHOOTING",
+        "20": "RUNNING-RIFLE",
+        "21": "RUNNING-UPHILL",
+        "22": "RUNNING-UPHILL-RIFLE",
+        "23": "SITTING",
+        "24": "SITTING-RIFLE",
+        "25": "SITTING-STANDING",
+        "26": "SITTING-STANDING-RIFLE",
+        "27": "STANDING",
+        "28": "STANDING-KNEELING-SHOOTING",
+        "29": "STANDING-PRONE-SHOOTING",
+        "30": "STANDING-RIFLE",
+        "31": "STANDING-SITTING",
+        "32": "STANDING-SITTING-RIFLE",
+        "33": "WALKING",
+        "34": "WALKING-DOWNHILL",
+        "35": "WALKING-DOWNSTAIRS",
+        "36": "WALKING-KNEELING-SHOOTING",
+        "37": "WALKING-PRONE-SHOOTING",
+        "38": "WALKING-SWEEPING",
+        "39": "WALKING-UPHILL",
+        "40": "WALKING-UPSTAIRS"
+    }
+}
